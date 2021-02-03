@@ -6,7 +6,7 @@ import './MainContent.scss';
 import Slideshow from '../slide-show/Slidehow';
 import Paginate from '../paginate/Paginate';
 import Grid from '../grid/Grid.js';
-import { IMAGE_URL } from '../../../services/movies.services';
+import { IMAGE_URL } from '../../../services/movies.service';
 import {
   getMovies,
   setResponsePageNumber

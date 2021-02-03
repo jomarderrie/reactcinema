@@ -2,14 +2,21 @@ import {
   MOVIE_LIST,
   RESPONSE_PAGE,
   LOAD_MORE_RESULTS,
-  MOVIE_TYPE
+  MOVIE_TYPE,
+  SEARCH_QUERY,
+  SEARCH_RESULT,
+  MOVIE_DETAILS,
+  CLEAR_MOVIE_DETAILS
 } from '../types';
 
 const initialState = {
   list: [],
   page: 1,
   totalPages: 0,
-  movieType: 'now_playing'
+  movieType: 'now_playing',
+  searchQuery: '',
+  searchResult: [],
+  movie: []
 };
 
 export default (state = initialState, action) => {
@@ -36,6 +43,26 @@ export default (state = initialState, action) => {
       return {
         ...state,
         movieType: action.payload
+      };
+    case SEARCH_RESULT:
+      return {
+        ...state,
+        searchResult: action.payload
+      };
+    case SEARCH_QUERY:
+      return {
+        ...state,
+        searchQuery: action.payload
+      };
+    case MOVIE_DETAILS:
+      return {
+        ...state,
+        movie: action.payload
+      };
+    case CLEAR_MOVIE_DETAILS:
+      return {
+        ...state,
+        movie: []
       };
     default:
       return state;
