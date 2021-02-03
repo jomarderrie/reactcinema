@@ -81,17 +81,6 @@ const Slideshow = (props) => {
     );
   };
 
-  const handleOnSlideClick = (event) => {
-    let index123 = event.target.value;
-    currentSlideIndex = index123;
-    setCurrentIndex(index123);
-    setState((prev) => ({
-      ...prev,
-      slideIndex: index123,
-      slideShow: images[index123]
-    }));
-  };
-
   const Indicators = (props) => {
     const { currentSlide } = props;
     const listIndicators = images.map((slide, i) => {
@@ -99,14 +88,7 @@ const Slideshow = (props) => {
         i === currentSlide
           ? 'slider-navButton slider-navButton--active'
           : 'slider-navButton';
-      return (
-        <button
-          className={btnClasses}
-          key={i}
-          value={i}
-          onClick={(e) => handleOnSlideClick(e)}
-        />
-      );
+      return <button className={btnClasses} key={i} />;
     });
     return <div className="slider-nav">{listIndicators}</div>;
   };
