@@ -1,4 +1,4 @@
-Url(just ip adress no domain):
+Url:http://therealdealimdbreact.s3-website-us-east-1.amazonaws.com
 
 features:
  - cicd pipeline
